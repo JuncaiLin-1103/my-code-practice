@@ -1,0 +1,20 @@
+int main()
+{
+	int a,b,c;
+	printf("请输入三个数：");
+	scanf("%d %d %d",&a,&b,&c);
+	if(a>b)
+	{
+		if(a>c)
+		printf("最大值是：%d",a);
+		printf("最大值是：%d",c);
+	}
+	else
+	{
+	if(b>c)
+	printf("最大值是：%d",b);
+	printf("最大值是：%d",c);
+	}
+	
+	return 0;
+ } 
