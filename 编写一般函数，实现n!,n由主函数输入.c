@@ -1,0 +1,22 @@
+//编写一般函数，实现n!,n由主函数输入
+int f( int n);
+
+main(){
+	int n;
+	scanf("%d",&n);
+	printf("你输入的%d!的结果是%ld\n",n,f(n));
+}
+
+int f(int n){
+	int i,j = 1;
+	if(n < 0)
+		printf("n < 0,输入错误");
+	else if(n == 1 || n == 0)
+		j = 1;
+	else{
+		for(i = n ; i > 0 ; i--)
+		j *= i;
+	}
+	return j;
+	
+}

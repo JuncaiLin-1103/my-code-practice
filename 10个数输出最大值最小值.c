@@ -1,0 +1,51 @@
+main()
+{
+	int a1,a2,a3,a4,a5,a6,a7,a8,a9,a10;
+	scanf("%d%d%d%d%d%d%d%d%d%d",&a1,&a2,&a3,&a4,&a5,&a6,&a7,&a8,&a9,&a10);
+{
+		if(a1<a2)
+	a1=a2;
+	if(a1<a3)
+	a1=a3;
+	if(a1<a4)
+	a1=a4;
+	if(a1<a5)
+	a1=a5;
+	if(a1<a6)
+	a1=a6;
+	if(a1<a7)
+	a1=a7;
+	if(a1<a8)
+	a1=a8;
+	if(a1<a9)
+	a1=a9;
+	if(a1<a10)
+	a1=a10;
+};
+{
+
+	if(a2>a1)
+	a2=a1;
+	if(a2>a3)
+	a2=a3;
+	if(a2>a4)
+	a2=a4;
+	if(a2>a5)
+	a2=a5;
+	if(a2>a6)
+	a2=a6;
+	if(a2>a7)
+	a2=a7;
+	if(a2>a8)
+	a2=a8;
+	if(a2>a9)
+	a2=a9;
+	if(a2>a10)
+	a2=a10;
+}
+	printf("最大值：%d",a1);
+	printf("最小值：%d",a2);
+	
+	system("pause");
+	
+}
