@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace:命名空间,被映射的接口的全限定名称，要与接口的全限定名称一致
+resultType：返回的类型，全限定名称
+-->
+<mapper namespace="com.grts.demo2.UserDao">
+
+<select id="findUserById" resultType="com.grts.demo2.User">
+select * from user where id = #{id}
+</select>
+
+<select id="findAllUser" resultType="com.grts.demo2.User">
+select * from user;
+</select>
+
+<select id="findLikeUserByname" resultType="com.grts.demo2.User">
+select * from user where  name like "%"#{name}"%";
+</select>
+
+<select id="findUserByLimit" resultType="com.grts.demo2.User">
+select * from user limit #{startIndex} , #{pageSides};
+</select>
+
+<insert id="addUser" parameterType="com.grts.demo2.User">
+insert into user values(#{id},#{name},#{pwd});
+</insert>
+
+<delete id="delectUser" parameterType="com.grts.demo2.User">
+delete from user where id = #{id};
+</delete>
+
+<update id="updateuser" parameterType="com.grts.demo2.User">
+update user set name = #{name},pwd = #{pwd} where id = #{id};
+</update>
+
+<update id="updateuser2" parameterType="com.grts.demo2.User">
+update user set name = #{name},pwd = #{pwd} where id = #{id};
+</update>
+
+<update id="updateuser3" parameterType="com.grts.demo2.User">
+update user set name = #{name},pwd = #{pwd} where id = #{id};
+</update>
+</mapper>

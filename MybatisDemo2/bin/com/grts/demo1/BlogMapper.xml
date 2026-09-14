@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.grts.demo1.BlogMapper">
+
+  <select id="getBlogs" resultType="com.grts.demo1.Blog">
+    select * from Blog 
+  </select>
+  
+  <insert id="insertBlog" parameterType="com.grts.demo1.Blog">
+  	insert into blog values(#{id},#{title},#{author},#{createTime},#{views})
+  </insert>
+  
+  <select id="getBlogsIf" resultType="com.grts.demo1.Blog">
+  	select * from Blog
+  	<where>
+  	<if test= "title != null">
+  		and title = #{title}
+  	</if>
+  	<if test= "author != null">
+  		and author = #{author}
+  	</if>
+  	<if test= "views != null">
+  		and views = #{views}
+  	</if>
+   	</where>
+  </select>
+  
+  <select id="getBlogsChoose" resultType="com.grts.demo1.Blog">
+  	select * from Blog where
+  	<choose>
+  		<when test="title != null">
+  		title like #{title}
+  		</when>
+  		<when test="author != null">
+  		author like #{author}
+  		</when>
+  		<when test="views != null">
+  		views like #{views}
+  		</when>
+  		<otherwise>
+  		1=1
+  		</otherwise>
+  	</choose>
+   </select>
+   
+   <update id="updateBlogSet" parameterType="com.grts.demo1.Blog">
+   update blog
+   <set>
+   	<if test="title != null"> title = #{title},</if>
+   	<if test="author != null"> author = #{author},</if>
+   	<if test="createTime != null"> createTime = #{createTime},</if>
+   	<if test="views != 0"> views = #{views},</if>
+   </set>
+   where id =#{id}
+   </update>
+   
+   <select id="getblogsForeach" resultType="com.grts.demo1.Blog">
+   select * from blog
+   	<where>
+   		<foreach collection="ids" item="id" separator="or" open="(" close=")">
+   		id = #{id}
+   		</foreach>
+   	</where>
+   </select>
+</mapper>

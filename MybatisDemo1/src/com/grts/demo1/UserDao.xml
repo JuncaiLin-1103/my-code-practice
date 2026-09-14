@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace:命名空间,被映射的接口的全限定名称，要与接口的全限定名称一致
+resultType：返回的类型，全限定名称
+-->
+<mapper namespace="com.grts.demo1.UserDao">
+<select id="findUserByID" resultType="com.grts.demo1.User">
+select * from user where id = #{id};
+</select>
+</mapper>
